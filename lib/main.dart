@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homework_with_team/pages/contact_page.dart';
 
 import 'pages/home_pages.dart';
 void main(){
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePages()
+      home: ContactPage()
     );
   }
 }

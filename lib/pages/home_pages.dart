@@ -26,7 +26,7 @@ class HomePages extends StatelessWidget {
                 Icon(Icons.search_outlined),
                 "Search".buildText(),
               ],
-            ).buildContainer(width: )
+            ).buildContainer( )
           ],
         ),
       ),
