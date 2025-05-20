@@ -23,7 +23,7 @@ extension BuildTextExt on String {
         fontSize: fontSize ?? 14,
         color: color ?? Colors.black,
         fontWeight: _parseFontWeight(fontWeight) ?? FontWeight.normal,
-        fontFamily: fontFamily ?? "Kufam",
+        fontFamily: fontFamily ,
         letterSpacing: letterSpacing,
         height: height,
         fontStyle: fontStyle,
