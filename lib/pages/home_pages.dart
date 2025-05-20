@@ -30,31 +30,41 @@ class HomePages extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(width: 10,),
+                  SizedBox(width: 10),
                   Icon(Icons.search_outlined),
                   SizedBox(width: 10),
                   "Search".buildText(),
                 ],
               ).buildContainer(
                 borderRadius: 10,
-                color: AppColors.greyColor.withOpacity(0.3),
-                height: context.height * 0.06,
-                width: context.width * 0.96,
+                color: AppColors.greyColor.withOpacity(0.2),
+                width: context.width * 0.95,
+                height: context.height * 0.065,
               ),
+              Row(children: ["FAVORITES".buildText()]),
+              rows(AppMedia.personGirlPath, "Emma Wilson"),
               Row(
                 children: [
-                  "FOVORITES".buildText(),
-                  Row(
-                    children: [
-                      Image.asset(AppMedia.personGirlPath)
-                    ],
-                  )
-                ],
-              )
+                  SizedBox(width: 15,),
+                  "A".buildText(),],
+              ),
+              rows(AppMedia.personManPath, "Albert Clark","Friend".buildText()),
+              rows(AppMedia.personGirlPath, "Anna Kim"),
+              rows(AppMedia.personManPath, "Jacob Wong"),
+              rows(AppMedia.personGirlPath, "Jacob Wong"),
+              rows(AppMedia.personManPath, "Jessica Chen"),
+              rows(AppMedia.personGirlPath, "Olivia Munoz"),
+              rows(AppMedia.personManPath, "Samuel Green"),
+
+
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Row rows(String person, String text, [Widget? container]) {
+  return Row(spacing: 10, children: [Image.asset(person,width: 40,height: 40,), text.buildText()]);
 }
