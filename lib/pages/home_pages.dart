@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homework_with_team/extensions/build_container_ext.dart';
 import 'package:homework_with_team/extensions/build_text_ext.dart';
 import 'package:homework_with_team/extensions/mediaqueryExt.dart';
+import 'package:homework_with_team/pages/contact_page.dart';
 import 'package:homework_with_team/utils/app_colors.dart';
 import 'package:homework_with_team/utils/app_media.dart';
 
@@ -22,12 +23,19 @@ class HomePages extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactPage()));
+      },child: Icon(Icons.add),backgroundColor: AppColors.mainColor,shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50)
+      ),),
+      body:
+      Padding(
         padding: const EdgeInsets.all(8.0),
         child: SafeArea(
           child: Column(
             spacing: 10,
             children: [
+
               Row(
                 children: [
                   SizedBox(width: 10),
@@ -43,28 +51,44 @@ class HomePages extends StatelessWidget {
               ),
               Row(children: ["FAVORITES".buildText()]),
               rows(AppMedia.personGirlPath, "Emma Wilson"),
-              Row(
-                children: [
-                  SizedBox(width: 15,),
-                  "A".buildText(),],
+              Row(children: [SizedBox(width: 15), "A".buildText()]),
+              rows(
+                AppMedia.personManPath,
+                "Albert Clark",
+                "Friend"
+
               ),
-              rows(AppMedia.personManPath, "Albert Clark","Friend".buildText()),
-              rows(AppMedia.personGirlPath, "Anna Kim"),
-              rows(AppMedia.personManPath, "Jacob Wong"),
+              rows(AppMedia.personGirlPath, "Anna Kim","Classmate"),
+              rows(AppMedia.personManPath, "Jacob Wong","Teacher"),
               rows(AppMedia.personGirlPath, "Jacob Wong"),
               rows(AppMedia.personManPath, "Jessica Chen"),
               rows(AppMedia.personGirlPath, "Olivia Munoz"),
               rows(AppMedia.personManPath, "Samuel Green"),
 
-
             ],
           ),
+
         ),
       ),
     );
   }
 }
 
-Row rows(String person, String text, [Widget? container]) {
-  return Row(spacing: 10, children: [Image.asset(person,width: 40,height: 40,), text.buildText()]);
+Row rows(String person, String text, [String? containerText]) {
+  return Row(
+    spacing: 10,
+    children: [Image.asset(person, width: 40, height: 40), text.buildText(),
+      Spacer(),
+      if (containerText != null) Container(
+        padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          color: AppColors.mainColor.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Text(containerText),
+      ),
+
+    ],
+
+  );
 }
