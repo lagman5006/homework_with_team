@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:homework_with_team/extensions/build_container_ext.dart';
 import 'package:homework_with_team/extensions/build_text_ext.dart';
 import 'package:homework_with_team/extensions/sized_box_ext.dart';
+import 'package:homework_with_team/pages/typenumbers_page.dart';
 import 'package:homework_with_team/utils/app_colors.dart';
 import 'package:homework_with_team/utils/app_media.dart';
 
@@ -114,16 +116,23 @@ class SecondContainer extends StatelessWidget {
           BuildRow(icon: Icon(Icons.phone), text: "Charlotte.diaz@example.com"),
           45.h,
           BuildRow(icon: Icon(Icons.email_outlined), text: ""),
-          Padding(
-            padding: EdgeInsets.only(left: 250),
-            child: "+"
-                .buildText(fontSize: 35, color: AppColors.whiteColor)
-                .buildContainer(
-                  width: 65,
-                  height: 65,
-                  borderRadius: 38,
-                  color: AppColors.mainColor,
+          InkWell(
+            onTap:
+                () => Navigator.push(
+                  context,
+                  CupertinoPageRoute(builder: (context) => TypeNumbers()),
                 ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 250),
+              child: "+"
+                  .buildText(fontSize: 35, color: AppColors.whiteColor)
+                  .buildContainer(
+                    width: 65, 
+                    height: 65,
+                    borderRadius: 38,
+                    color: AppColors.mainColor,
+                  ),
+            ),
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homework_with_team/extensions/build_text_ext.dart';
+import 'package:homework_with_team/pages/home_pages.dart';
 import 'package:homework_with_team/pages/numbers.dart';
 import 'package:homework_with_team/utils/app_colors.dart';
 import 'package:homework_with_team/utils/app_media.dart';
@@ -8,9 +9,19 @@ import 'contact_page.dart';
 
 class TypeNumbers extends StatelessWidget {
   final List<String?> text;
-  const TypeNumbers({super.key,this.text= const ["ABC","DEF","GHI","JKL","MNO","PORS","TUV","WXYZ",
-
-  ]});
+  const TypeNumbers({
+    super.key,
+    this.text = const [
+      "ABC",
+      "DEF",
+      "GHI",
+      "JKL",
+      "MNO",
+      "PORS",
+      "TUV",
+      "WXYZ",
+    ],
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +30,7 @@ class TypeNumbers extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ContactPage()),
+            MaterialPageRoute(builder: (context) => HomePages()),
           );
         },
         backgroundColor: AppColors.mainColor,
@@ -32,7 +43,6 @@ class TypeNumbers extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(AppMedia.personGirlPath),
@@ -48,14 +58,15 @@ class TypeNumbers extends StatelessWidget {
                 itemCount: 12,
                 itemBuilder: (BuildContext context, int index) {
                   return Numbers(
-
-                      number:index ,
-                    text: (index == 0 || index == 9  || index == 10 || index == 11 ) ? null : text[index-1]
+                    number: index,
+                    text:
+                        (index == 0 || index == 9 || index == 10 || index == 11)
+                            ? null
+                            : text[index - 1],
                   );
                 },
               ),
             ),
-
           ],
         ),
       ),
