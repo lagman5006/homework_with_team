@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homework_with_team/pages/contact_page.dart';
+import 'package:homework_with_team/pages/typenumbers_page.dart';
 
 import 'pages/home_pages.dart';
 
@@ -12,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePages());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: TypeNumbers());
   }
 }

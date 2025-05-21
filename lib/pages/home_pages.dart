@@ -27,9 +27,9 @@ class HomePages extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
         Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactPage()));
-      },child: Icon(Icons.add),backgroundColor: AppColors.mainColor,shape: RoundedRectangleBorder(
+      },backgroundColor: AppColors.mainColor,shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50)
-      ),),
+      ),child: Icon(Icons.add,color: AppColors.whiteColor,),),
       body:
       Padding(
         padding: const EdgeInsets.all(8.0),
