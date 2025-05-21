@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homework_with_team/extensions/build_container_ext.dart';
 import 'package:homework_with_team/extensions/build_text_ext.dart';
 import 'package:homework_with_team/extensions/mediaqueryExt.dart';
-import 'package:homework_with_team/pages/contact_page.dart';
+import 'package:homework_with_team/pages/typenumbers_page.dart';
 import 'package:homework_with_team/utils/app_colors.dart';
 import 'package:homework_with_team/utils/app_media.dart';
 
@@ -26,10 +26,10 @@ class HomePages extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> ContactPage()));
-      },child: Icon(Icons.add),backgroundColor: AppColors.mainColor,shape: RoundedRectangleBorder(
+        Navigator.push(context, MaterialPageRoute(builder: (context)=> TypeNumbers()));
+      },backgroundColor: AppColors.mainColor,shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(50)
-      ),),
+      ),child: Icon(Icons.add,color: AppColors.whiteColor,),),
       body:
       Padding(
         padding: const EdgeInsets.all(8.0),

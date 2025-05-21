@@ -17,14 +17,14 @@ class ContactPage extends StatelessWidget {
         child: Column(
           children: [
             FirstContainer().buildContainer(
-              width: width * 0.9,
-              height: height * 0.4,
+              width: width * 0.95,
+              height: height * 0.45,
               borderRadius: 15,
-              margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+              margin: EdgeInsets.only(left: 20, top: 0, right: 20),
             ),
-            30.h,
+            10.h,
             SecondContainer().buildContainer(
-              width: width * 0.9,
+              width: width * 0.95,
               height: height * 0.45,
               borderRadius: 15,
               margin: EdgeInsets.only(left: 20, top: 20, right: 20),
