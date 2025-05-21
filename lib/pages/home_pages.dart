@@ -12,7 +12,9 @@ class HomePages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
         title: SafeArea(
           child: Row(
             children: [
